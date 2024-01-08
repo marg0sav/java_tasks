@@ -101,6 +101,26 @@ class MyHashMapTest {
     }
 
     @org.junit.jupiter.api.Test
+    void testContainsKey() {
+        MyMap<String, Integer> myMap = new MyHashMap<>();
+
+        // Вставляем элемент в хеш-таблицу
+        myMap.put("key1", 42);
+
+        // Проверяем, содержится ли ключ "key1"
+        assertTrue(myMap.containsKey("key1"));
+
+        // Проверяем, что ключ "key2" отсутствует
+        assertFalse(myMap.containsKey("key2"));
+
+        // Вставляем еще один элемент
+        myMap.put("key2", 100);
+
+        // Теперь ключ "key2" должен быть в хеш-таблице
+        assertTrue(myMap.containsKey("key2"));
+    }
+
+    @org.junit.jupiter.api.Test
     void iterator() {
         MyHashMap<String, Integer> myMap = new MyHashMap<>();
         HashMap<String, Integer> hashMap = new HashMap<>();
